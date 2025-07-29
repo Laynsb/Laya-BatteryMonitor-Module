@@ -1,5 +1,3 @@
-### These changelog are meant for Laya BatteryMonitor-dev GitHub
-
 ~ V2.1-stable
 • Forcing to override governor permissions from read-only to read/write (this fixes was created due to encore tweaks module causing governor to be read-only)
 • Reuses .join() paths once.
