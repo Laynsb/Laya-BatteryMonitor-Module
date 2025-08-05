@@ -1,3 +1,15 @@
+~ V2.2-stable
+[New]
+• Added supported governor detector for fallbacks if powersave doesn't existed
+
+[Fixed issues]
+• Fix for some exynos devices that doesn't have powersave (fallback to energy_step)
+
+[Optimization & Improvement]
+• Use more-efficient property checks instead of getprop to reduce overhead
+• Improved compatibility for exynos devices
+• Minor code cleanup
+
 ~ V2.1-stable
 • Forcing to override governor permissions from read-only to read/write (this fixes was created due to encore tweaks module causing governor to be read-only)
 • Reuses .join() paths once.
