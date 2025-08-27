@@ -1,28 +1,19 @@
-~ V2.5-stable
+~ V2.3-stable
 [New]
-• Added automatically set doze mode to on after screen was off, reverts back into off when screen was on
-• Added sysfs_writer helper to improve efficiency
-• Merge v2.3 and v2.4 into V2.5
+• Merge with LayaBattMon ROM integration version to improve maintainability
 
 [Fixes Issues]
-• Fixed Small inotify buffer and resizes causing reallocations
-• Fixed Wrong pointer type for execlp null
-• Fixed Fork+post-fork unsafe behavior in run_deviceidle_cmd
-• read_trimmed now returns an empty string on read errors instead of the literal "err"
+• Fix multiple issues for better stability
+• Temporary removes deviceidle feature to reduce unnecessary errors (wait for next update?)
 • Minor misc fixes
 
 [Optimization & improvements]
-• Optimized Multiple open/close on sysfs files
-• Optimize spawn thread and logs if thread spawn fails.
-• Minor optimization at governor permissions bypass function
-• Removed unnecessary AtomicBool and Mutex<bool in main_monitor
-• Avoid heavy clones
-• Improved get_supported_governor checks for governors with .any() instead of collecting into a Vec.
-• Reduced Unnecessary Arc/Mutex for values only used in one thread
-• Modernize some code to OnceLock
-• Improved restore cpu configuration responsiveness
-• Improved power consumption reduction and heat controls more
-• Reduced memory constraints from spawn thread process
+• Major changes at code logic and improving it for better stability and compatibility
+• Removed property checks to reduce unnecessary overhead
+• Improved PermHandler Logic and stability
+• Reduce unnecessary overhead
+• Remove duplicate closing braces
+• Simplified changelog
 
 ~ V2.2-stable
 [New]
