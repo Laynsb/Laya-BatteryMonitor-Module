@@ -1,10 +1,11 @@
 ~ V2.3-stable
 [New]
 • Merge with LayaBattMon ROM integration version to improve maintainability
+• [ROM] Added PermHandler function to resolve governor permissions issue in Integrated battmon
 
 [Fixes Issues]
 • Fix multiple issues for better stability
-• Temporary removes deviceidle feature to reduce unnecessary errors (wait for next update?)
+• Temporary removes deviceidle feature to reduce unnecessary errors
 • Minor misc fixes
 
 [Optimization & improvements]
