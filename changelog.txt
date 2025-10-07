@@ -1,3 +1,17 @@
+~ V3.0 (stable)
+• Rewrite Code logic entirely and optimize code structure
+• Added robust signal handling, watchdog, rate limiting, and comprehensive error scenarios
+• Intelligently handle error scenarios and log it with native logging method
+• Added intelligent WatchDog for crash monitor
+• Improved Inotify Init logic
+• Improved CPU Policy Management
+• Improved Main Loop & Safety
+• Added Debouncing with state verification
+• Graceful degradation on inotify errors
+• Added Shutdown flag for clean exit
+• Added Error recovery
+• Much more, Misc optimizations and major code structural changes
+
 ~ V2.3-stable
 [New]
 • Merge with LayaBattMon ROM integration version to improve maintainability
