@@ -1,3 +1,12 @@
+~ V4.1-stable
+• Added Inotify-driven screen monitoring (this thing is was not added previously due to building battmon from scratch)
+• Added Adaptive polling interval screen monitoring as fallback in case inotify-init was fail to load properly
+• Added Thermal history tracking to learn CPU temps over time during screen off (if temps consistently low, gradually increase max freq, if temps spikes, it learns to reduce further next time and adjust them automatically)
+• Screen reaction time set to instant (fallback screen monitor will Adaptively adjust reaction in case inotify-init fail)
+• Optimizations on code structure & inotify reaction
+• Removed legacy monitoring
+• Clean up some comments
+
 ~ V4.0-stable
 • Rebuild entire code and optimize every function
 • Optimize Apply and Restore Strategy to fix permissions denied caused by Azenith, Encore, Etc
