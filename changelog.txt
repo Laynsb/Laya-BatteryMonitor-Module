@@ -5,7 +5,9 @@
 • Enhanced code robustness & Structural
 • Added intelligent learning system
 • Upstream Rust version, linker, etc to improve overall stability, security & execution
-• [Optimization] Lowering overall overhead 
+• [Optimization] Lowering overall overhead
+• Devide by 2 with max freq (ex: 3000mhz / 2 = 1500mhz) for better power savings without too much limitations and to avoid random reboot issues
+• Refactor policy detection to improve work efficiency
 
 ~ V2.3-stable
 [New]
