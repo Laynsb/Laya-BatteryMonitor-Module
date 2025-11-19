@@ -1,3 +1,9 @@
+~ V4.2-stable-release
+• Added SystemState.su_available tracking and a reusable 
+run_privileged_command helper so we reuse cached knowledge about su availability instead of probing repeatedly.
+• Use the new helper function for all chmod/echo operations, eliminating duplicated logic, improving readability, and preventing partial failures when su is absent.
+• Fix Freq logic (removes min_freq write)
+
 ~ V4.1-stable
 • Added Inotify-driven screen monitoring (this thing is was not added previously due to building battmon from scratch)
 • Added Adaptive polling interval screen monitoring as fallback in case inotify-init was fail to load properly
