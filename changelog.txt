@@ -1,10 +1,26 @@
-~ V4.2-stable-release
-• Added SystemState.su_available tracking and a reusable 
-run_privileged_command helper so we reuse cached knowledge about su availability instead of probing repeatedly.
-• Use the new helper function for all chmod/echo operations, eliminating duplicated logic, improving readability, and preventing partial failures when su is absent.
-• Fix Freq logic (removes min_freq write)
+----- V4.2-stable-release -----
+Added:
+• RAII Resource Management: InotifyGuard struct automatically closes file descriptors, preventing leaks
+• State Debouncing: 2-second minimum interval between screen state transitions to prevent rapid changes
+• Retry Logic: Exponential backoff (3 attempts) for transient filesystem errors
+• Path Validation: Security checks prevent path traversal attacks, enforce /sys/ prefix
+• Safe Parsing: safe_parse_u32() and safe_parse_u64() with bounds checking (20 char limit)
+• Checked Arithmetic: checked_div() protects against integer overflow in frequency calculations
+• Thermal Validation: Filters unrealistic temperature readings (>200°C)
 
-~ V4.1-stable
+Changed:
+• Error Handling: Replaced all .unwrap() calls with proper error handling and graceful degradation
+• Filesystem Operations: All fs::read_to_string() calls now use safe_read_to_string() with validation + retry
+• CPU Policy Scanning: Uses safe helpers with better error logging
+• Inotify Monitoring: Resource cleanup in all error paths
+• Mutex Locking: Proper error handling instead of panic on lock failure
+• Logging: Better fallback when CString creation fails
+
+Removed:
+• Redundant [orig_gov={}] from powersave success log (already logged during capture)
+• Unused code method and field
+
+----- V4.1-stable -----
 • Added Inotify-driven screen monitoring (this thing is was not added previously due to building battmon from scratch)
 • Added Adaptive polling interval screen monitoring as fallback in case inotify-init was fail to load properly
 • Added Thermal history tracking to learn CPU temps over time during screen off (if temps consistently low, gradually increase max freq, if temps spikes, it learns to reduce further next time and adjust them automatically)
