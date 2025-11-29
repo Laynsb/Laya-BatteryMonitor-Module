@@ -1,3 +1,26 @@
+----- V4.5-stable-release -----
+Added:
+• Property-based frequency divisor via persist.sys.laya.devide.cpufreq (valid value = default , false , lowest)
+• Initial screen state detection at daemon startup
+• captured flag to track original CPU values
+• Instructions for freq divisor on service.sh (module)
+
+Changed:
+• Debounce timeout: 2 seconds → 0 (disabled)
+• Lock duration: optimized by releasing before I/O operations
+
+Removed:
+• Thermal tracking infrastructure (~150 lines)
+• ThermalHistory, ThermalLevel enums (broken impl)
+• Dynamic thermal throttling logic (broken impl)
+
+Improved:
+• Shutdown synchronization with CLEANUP_DONE flag
+• Governor validation (supports hyphens: sched-util)
+• Screen state response (instant response on inotify event)
+• Code design by cleaning up multiple warnings(18 warnings) on clippy
+• Much more
+
 ----- V4.2-stable-release -----
 Added:
 • RAII Resource Management: InotifyGuard struct automatically closes file descriptors, preventing leaks
